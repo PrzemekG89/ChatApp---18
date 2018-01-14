@@ -5176,7 +5176,7 @@ function reloadApp() {
   }
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:8080"))
+/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:5000"))
 
 /***/ }),
 /* 44 */
@@ -31367,7 +31367,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var socket = (0, _socket2.default)('/');
+//const socket = io('/');
+var socket = (0, _socket2.default)('http://localhost:3000');
 
 var App = function (_Component) {
     _inherits(App, _Component);
@@ -31414,7 +31415,7 @@ var App = function (_Component) {
         key: 'handleMessageSubmit',
         value: function handleMessageSubmit(message) {
             var messages = [message].concat(_toConsumableArray(this.state.messages));
-            this.setState({ message: message });
+            this.setState({ messages: messages });
             socket.emit('message', message);
         }
     }, {
@@ -34641,7 +34642,7 @@ exports = module.exports = __webpack_require__(7)(undefined);
 
 
 // module
-exports.push([module.i, "body {\n    margin: 0;\n}\n\n._3HtT6GDZDXMjHHfhWbFwsK {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    height: 100vh;\n}\n\n._llPSW5iWAXYliq7g-hel {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    border-bottom: 1px solid #ccc;\n}\n\n._1tPWRuM3cHxgEU3qrRkHhf {\n    display: flex;\n    width: 25vw;\n    border-right: 1px solid #ccc;\n    justify-content: center;\n    box-sizing: border-box;\n    padding: 20px;\n}\n\n._3MMUFcgGDSdP1d0FlbFIdO {\n    display: flex;\n    width: 75vw;\n    justify-content: center;\n    box-sizing: border-box;\n    padding: 20px;\n}\n\n._1Xm1lSJwOROAwGzk130swu {\n    display: flex;\n    flex-direction: row;\n    flex: 1;\n}\n\n._1dVqIOiBK1eT6KrIm6Hnyo {\n    display: flex;\n    flex-direction: column;\n    width: 75vw;\n    flex: 1;\n}", ""]);
+exports.push([module.i, "body {\n    margin: 0;\n    box-sizing: border-box\n}\n\n._3HtT6GDZDXMjHHfhWbFwsK {\n    display: flex;\n    flex-direction: column;\n    flex: 1;\n    height: 100vh;\n}\n\n._llPSW5iWAXYliq7g-hel {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    border-bottom: 1px solid #ccc;\n}\n\n._1tPWRuM3cHxgEU3qrRkHhf {\n    display: flex;\n    width: 25vw;\n    border-right: 1px solid #ccc;\n    justify-content: center;\n    box-sizing: border-box;\n    padding: 20px;\n}\n\n._3MMUFcgGDSdP1d0FlbFIdO {\n    display: flex;\n    width: 75vw;\n    justify-content: center;\n    box-sizing: border-box;\n    padding: 20px;\n}\n\n._1Xm1lSJwOROAwGzk130swu {\n    display: flex;\n    flex-direction: row;\n    flex: 1;\n}\n\n._1dVqIOiBK1eT6KrIm6Hnyo {\n    display: flex;\n    flex-direction: column;\n    width: 74vw;\n    flex: 1;\n}", ""]);
 
 // exports
 exports.locals = {
@@ -34935,7 +34936,7 @@ var Message = function Message(props) {
             'strong',
             null,
             props.from,
-            ' :'
+            ': '
         ),
         _react2.default.createElement(
             'span',

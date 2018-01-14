@@ -7,7 +7,8 @@ import MessageList from './MessageList';
 import UsersList from './UsersList';
 import UserForm from './UserForm';
 
-const socket = io('/');
+//const socket = io('/');
+const socket = io('http://localhost:3000');
 
 class App extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class App extends Component {
 
     handleMessageSubmit(message) {
         const messages = [message, ...this.state.messages];
-        this.setState({ message });
+        this.setState({ messages });
         socket.emit('message', message);
     }
 

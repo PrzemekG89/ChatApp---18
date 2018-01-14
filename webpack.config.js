@@ -29,12 +29,16 @@ console.log('NODE_ENV:', env);
 module.exports = {
     entry: (env !== 'production' ? [
         'react-hot-loader/patch',
-        'webpack-dev-server/client?http://localhost:8080',
+        'webpack-dev-server/client?http://localhost:5000',
         'webpack/hot/only-dev-server',
     ] : []).concat(['./client/index.js']),
     output: {
         filename: './bundle.js',
         path: path.resolve(__dirname, 'public'),
+    },
+    devServer: {
+        inline: true,
+        port: 5000
     },
     module: {
         rules: [

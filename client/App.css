@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    box-sizing: border-box
 }
 
 .App {
@@ -42,6 +43,6 @@ body {
 .MessageWrapper {
     display: flex;
     flex-direction: column;
-    width: 75vw;
+    width: 74vw;
     flex: 1;
 }

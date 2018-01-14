@@ -11,9 +11,9 @@ const userService = new UsersService();
 
 app.use(express.static(__dirname + '/public'));
 
-// app.get('/', function(req, res) {
-//     res.sendFile(__dirname + '/index.html');
-// });
+app.get('/', function(req, res) {
+     res.sendFile(__dirname + '/index.html');
+});
 
 io.on('connection', function (socket) {
     //funkcje, które zostaną wykonane po podłączneiu klienta
@@ -37,7 +37,7 @@ io.on('connection', function (socket) {
         //wysyłanie wiadomości
         socket.on('message', function (message) {
             const { name } = userService.getUserById(socket.id);
-            socket.emit('message', {
+            socket.broadcast.emit('message', {
                 text: message.text,
                 from: name
             });
@@ -45,6 +45,8 @@ io.on('connection', function (socket) {
     });
 });
 
-server.listen(3000, function () {
-    console.log('listening on *:3000');
-});
+
+io.listen(3000);
+//server.listen(3000, function () {
+//    console.log('listening on *:3000');
+//});
