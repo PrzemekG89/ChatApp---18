@@ -14,16 +14,20 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    background-color: #3498db;
     border-bottom: 1px solid #ccc;
+    color: #fff;
 }
 
 .AppTitle {
     display: flex;
     width: 25vw;
-    border-right: 1px solid #ccc;
     justify-content: center;
     box-sizing: border-box;
     padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: italic;
 }
 
 .AppRoom {
